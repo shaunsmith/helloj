@@ -13,8 +13,8 @@ build:
         code: |
           curl -L -o ./fn https://github.com/fnproject/cli/releases/download/0.5.28/fn_linux
           chmod +x ./fn
-          ./fn version    
-    - script:
-        name: Build and deploy Java function
-        code: ./fn build
+ #         ./fn version    
+ #  - script:
+ #      name: Build and deploy Java function
+ #       code: ./fn build
       
