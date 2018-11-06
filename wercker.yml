@@ -9,5 +9,14 @@ build:
         name: Install curl command
         code: apk --no-cache add curl
     - script:
-        name: Install fn cli
-        code: ./fnbuild.sh
+        name: Install fn and build function
+        code: |
+            mkdir ${WERCKER_ROOT}/bin
+            chmod -R 755 ${WERCKER_ROOT}/bin
+            echo "$(ls -la ${WERCKER_ROOT}/bin)"
+            curl -L -o ${WERCKER_ROOT}/bin/fn https://github.com/fnproject/cli/releases/download/0.5.28/fn_linux
+            echo "$(ls -la ${WERCKER_ROOT}/bin)"
+            chmod +x ${WERCKER_ROOT}/bin/fn
+            echo "$(ls -la ${WERCKER_ROOT}/bin/fn)"
+            ${WERCKER_ROOT}/bin/fn version
+            ${WERCKER_ROOT}/bin/fn -verbose build
