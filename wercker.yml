@@ -11,10 +11,10 @@ build:
     - script:
         name: Install fn cli
         code: |
-          curl -L -o ${WERCKER_ROOT}/fn https://github.com/fnproject/cli/releases/download/0.5.28/fn_linux
+          curl -L -o ${WERCKER_OUTPUT_DIR}/fn https://github.com/fnproject/cli/releases/download/0.5.28/fn_linux
 
-          chmod +x ${WERCKER_ROOT}/fn
-          ${WERCKER_ROOT}/fn version
+          chmod +x ${WERCKER_OUTPUT_DIR}/fn
+          ${WERCKER_OUTPUT_DIR}/fn version
     - script:
         name: Build Java function
-        code: ${WERCKER_ROOT}/fn -verbose build
+        code: ${WERCKER_OUTPUT_DIR}/fn -verbose build
