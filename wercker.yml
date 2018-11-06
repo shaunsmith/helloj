@@ -11,7 +11,7 @@ build:
     - script:
         name: Install fn cli
         code: |
-          curl -L -o ${WERCKER_CACHE_DIR}/fn https://github.com/fnproject/cli/releases/download/0.5.28/fn_linux
+          curl -v -L -o ${WERCKER_CACHE_DIR}/fn https://github.com/fnproject/cli/releases/download/0.5.28/fn_linux
           chmod +x ${WERCKER_CACHE_DIR}/fn
           ${WERCKER_CACHE_DIR}/fn version
           ${WERCKER_CACHE_DIR}/fn -verbose build
