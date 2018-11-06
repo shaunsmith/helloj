@@ -2,7 +2,7 @@
 
 mkdir ${WERCKER_ROOT}/bin
 chmod -R 755 ${WERCKER_ROOT}/bin
-"bin dir"
+echo "bin dir"
 echo "$(ls -la ${WERCKER_ROOT})"
 curl -L -o ${WERCKER_ROOT}/bin/fn https://github.com/fnproject/cli/releases/download/0.5.28/fn_linux
 echo "post download"
