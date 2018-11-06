@@ -10,4 +10,4 @@ build:
         code: apk --no-cache add curl
     - script:
         name: Install fn cli
-        code: fnbuild.sh
+        code: ./fnbuild.sh
