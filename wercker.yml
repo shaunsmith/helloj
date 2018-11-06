@@ -10,12 +10,4 @@ build:
         code: apk --no-cache add curl
     - script:
         name: Install fn cli
-        code: |
-          cd ${WERCKER_CACHE_DIR}
-          pwd
-          ls -la
-          curl -L -o ${WERCKER_CACHE_DIR}/fn https://github.com/fnproject/cli/releases/download/0.5.28/fn_linux
-          ls -la
-          chmod +x ${WERCKER_CACHE_DIR}/fn
-          ${WERCKER_CACHE_DIR}/fn version
-          ${WERCKER_CACHE_DIR}/fn -verbose build
+        code: fnbuild.sh
