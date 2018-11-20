@@ -4,17 +4,16 @@ build:
   steps:
     - script:
         name: Install docker command
-        code: apk --no-cache add docker   
+        code: apk --no-cache add docker
     - script:
         name: Install curl command
-        code: apk --no-cache add curl      
+        code: apk --no-cache add curl
     - script:
-        name: Install fn cli
+        name: Install fn and build function
         code: |
           mkdir $WERCKER_ROOT/fn
           cd $WERCKER_ROOT/fn
           curl -L -o fn https://github.com/fnproject/cli/releases/download/0.5.28/fn_linux
-          chmod +x fn
           chmod a+x $WERCKER_ROOT/fn/fn 
           export PATH=$WERCKER_ROOT/fn:$PATH
           fn version
